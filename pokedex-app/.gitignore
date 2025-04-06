@@ -11,6 +11,10 @@
 # production
 /build
 
+# cache
+.vite/
+.svelte-kit/
+
 # misc
 .DS_Store
 .env.local
@@ -18,6 +22,11 @@
 .env.test.local
 .env.production.local
 
+# IDEs
+.vscode/
+.idea/
+
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

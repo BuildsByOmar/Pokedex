@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+```markdown
+# Pokédex - React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un **Pokédex** interactif développé avec React.js, permettant de rechercher, afficher et filtrer des Pokémon. Ce projet utilise des APIs publiques pour récupérer les données sur les Pokémon et offre une interface utilisateur élégante avec des fonctionnalités comme l'affichage de la chaîne d'évolution des Pokémon.
 
-## Available Scripts
+## Table des matières
+1. [Fonctionnalités](#fonctionnalités)
+2. [Technologies utilisées](#technologies-utilisées)
+3. [Installation](#installation)
+4. [Utilisation](#utilisation)
+5. [Structure du projet](#structure-du-projet)
+6. [Contribuer](#contribuer)
+7. [Licence](#licence)
 
-In the project directory, you can run:
+## Fonctionnalités
 
-### `npm start`
+- **Affichage des Pokémon** : Liste complète des Pokémon avec détails (id, nom, type, etc.).
+- **Filtrage et recherche** : Recherche de Pokémon par nom ou type.
+- **Détails Pokémon** : Affichage détaillé d'un Pokémon lorsqu'on clique sur une carte, incluant ses statistiques et sa chaîne d'évolution.
+- **Gestion des langues** : Support pour plusieurs langues (Français, Anglais, etc.).
+- **Évolutions** : Affichage complet de la chaîne d'évolution des Pokémon.
+- **Affichage Shiny** : Toggle pour afficher la version shiny du Pokémon.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies utilisées
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React.js** : Bibliothèque JavaScript pour la construction d'interfaces utilisateurs.
+- **Styled Components** : Pour le style dynamique et modulaire de l'application.
+- **React Router** : Pour la gestion de la navigation dans l'application.
+- **Axios** : Pour effectuer des requêtes HTTP vers l'API des Pokémon.
+- **i18next** : Pour la gestion de la traduction et du support multi-langues.
+- **Git** : Contrôle de version et collaboration.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Suivez les étapes ci-dessous pour configurer votre environnement local et lancer l'application.
 
-### `npm run build`
+### Prérequis
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js** et **npm** doivent être installés sur votre machine. Vous pouvez vérifier si Node.js est installé en exécutant :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```bash
+  node -v
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  Si ce n'est pas le cas, vous pouvez l'installer depuis [nodejs.org](https://nodejs.org/).
 
-### `npm run eject`
+### Cloner le repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clonez ce repository sur votre machine locale :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/ton-utilisateur/pokedex.git
+cd pokedex
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installer les dépendances
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Exécutez la commande suivante pour installer toutes les dépendances nécessaires :
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Lancer l'application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Une fois les dépendances installées, vous pouvez démarrer l'application en exécutant :
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Cela démarrera l'application en mode développement, accessible sur [http://localhost:3000](http://localhost:3000).
 
-### Analyzing the Bundle Size
+## Utilisation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Page d'accueil** : Affiche une liste de Pokémon avec une option de recherche et des filtres.
+- **Page de détails** : En cliquant sur un Pokémon, vous verrez ses détails (types, statistiques, et chaîne d'évolution).
+- **Sélection d'un Pokémon** : Vous pouvez naviguer dans la chaîne d'évolution pour voir toutes les formes d'un Pokémon, du stade de base à son évolution finale.
 
-### Making a Progressive Web App
+### Langues
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+L'application prend en charge plusieurs langues, y compris le **Français** et l'**Anglais**. Vous pouvez changer la langue en cliquant sur les boutons de sélection de langue dans l'en-tête.
 
-### Advanced Configuration
+## Structure du projet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Voici un aperçu de la structure des fichiers dans ce projet :
 
-### Deployment
+```
+pokedex/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── pages/
+│   ├── App.js
+│   ├── index.js
+│   ├── App.css
+│   └── i18n.js
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **public/** : Contient les fichiers statiques comme `index.html` et les images.
+- **src/** : Contient tout le code source de l'application.
+  - **assets/** : Contient les images et autres ressources statiques.
+  - **components/** : Composants React réutilisables.
+  - **context/** : Contexte pour la gestion de l'état global (par exemple, sélection de la langue).
+  - **hooks/** : Hooks personnalisés pour gérer l'état et les effets.
+  - **pages/** : Composants représentant des pages distinctes de l'application.
 
-### `npm run build` fails to minify
+## Contribuer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Les contributions sont les bienvenues ! Si vous avez une fonctionnalité à proposer, ou un bug à signaler, suivez ces étapes :
+
+1. Fork ce repository.
+2. Créez une branche (`git checkout -b feature-nom-de-fonctionnalité`).
+3. Committez vos changements (`git commit -am 'Ajout de fonctionnalité'`).
+4. Poussez vos modifications (`git push origin feature-nom-de-fonctionnalité`).
+5. Créez une Pull Request.
+
+Merci de respecter les conventions de code et d'ajouter des tests pour vos nouvelles fonctionnalités.
+
+## Licence
+
+Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+```
+
+### Explication des sections :
+
+1. **Fonctionnalités** : Une liste des fonctionnalités principales de ton projet.
+2. **Technologies utilisées** : Indique les technologies et outils que tu utilises.
+3. **Installation** : Instructions pour installer et faire fonctionner l'application localement.
+4. **Utilisation** : Un guide rapide sur l'utilisation de l'application une fois qu'elle est lancée.
+5. **Structure du projet** : Décrit l'organisation des fichiers et des répertoires dans ton projet.
+6. **Contribuer** : Fournit des instructions sur comment les autres peuvent contribuer au projet.
+7. **Licence** : Spécifie la licence sous laquelle ton code est partagé (par exemple, MIT).
